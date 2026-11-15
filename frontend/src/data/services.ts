@@ -80,8 +80,8 @@ export function getServices(lang: Language): Service[] {
           'Domain (.com) connection and cloud publishing included'
         ],
         excludes: [
-          'Does not include user login accounts or administrative database',
-          'Does not include a multi-product shopping cart'
+          'This option does not include user login accounts or administrative database',
+          'This option does not include a multi-product shopping cart'
         ],
         ctaText: 'Quote Sales Website',
         whatsappPrefill: 'Hi Tether Digital, I would like to quote a Single-Page Sales Website (Landing Page).'
@@ -106,7 +106,7 @@ export function getServices(lang: Language): Service[] {
           'Fast and secure cloud infrastructure deployment'
         ],
         excludes: [
-          'Does not include complex multi-currency banking gateways without prior scoping'
+          'This option does not include complex multi-currency banking gateways without prior scoping'
         ],
         ctaText: 'Quote Web Platform',
         whatsappPrefill: 'Hi Tether Digital, I am interested in quoting a Web Platform with Admin Dashboard.'
@@ -131,7 +131,7 @@ export function getServices(lang: Language): Service[] {
           'Dedicated priority technical support'
         ],
         excludes: [
-          'External software or third-party API licensing subscriptions selected by the client'
+          'This option does not include external software or third-party API licensing subscriptions selected by the client'
         ],
         ctaText: 'Consult Custom System',
         whatsappPrefill: 'Hi Tether Digital, I require a proposal for Custom Enterprise Software.'
@@ -157,9 +157,9 @@ export function getServices(lang: Language): Service[] {
           'Active monitoring and calibration during early ad delivery'
         ],
         excludes: [
-          'IMPORTANT: Does NOT include graphic design of banners, flyers, or images (client must provide ready assets)',
-          'IMPORTANT: Does NOT include video shooting or video editing (client supplies finished video files)',
-          'Does NOT include the daily ad spend paid directly to Facebook/Instagram'
+          'IMPORTANT: This option does NOT include graphic design of banners, flyers, or images (client must provide ready assets)',
+          'IMPORTANT: This option does NOT include video shooting or video editing (client supplies finished video files)',
+          'This option does NOT include the daily ad spend paid directly to Facebook/Instagram'
         ],
         ctaText: 'Quote Ad Campaign',
         whatsappPrefill: 'Hi Tether Digital, I want to quote Facebook & Instagram Ad Campaigns.'
@@ -185,7 +185,7 @@ export function getServices(lang: Language): Service[] {
           'Automatic prospect recording directly into a Google Sheets spreadsheet'
         ],
         excludes: [
-          'Per-conversation messaging fees charged directly by the official WhatsApp API provider'
+          'This option does not include per-conversation messaging fees charged directly by the official WhatsApp API provider'
         ],
         ctaText: 'Automate WhatsApp',
         whatsappPrefill: 'Hi Tether Digital, I want to implement the 24/7 Automated WhatsApp Sales Bot.'
@@ -210,7 +210,7 @@ export function getServices(lang: Language): Service[] {
           'Real-time spreadsheet sync so your team can follow up quickly'
         ],
         excludes: [
-          'Story mention replies beyond standard Meta API permissions'
+          'This option does not include story mention replies beyond standard Meta API permissions'
         ],
         ctaText: 'Automate DMs',
         whatsappPrefill: 'Hi Tether Digital, I want to automate Instagram & Facebook Messenger DMs.'
@@ -235,7 +235,7 @@ export function getServices(lang: Language): Service[] {
           'Configured for both Facebook and Instagram'
         ],
         excludes: [
-          'Manual customer service dispute moderation outside configured keyword filters'
+          'This option does not handle manual customer service disputes outside the configured keyword filters'
         ],
         ctaText: 'Automate Comments',
         whatsappPrefill: 'Hi Tether Digital, I want to activate Instant Comment Auto-Replies on Posts & Reels.'
@@ -264,8 +264,8 @@ export function getServices(lang: Language): Service[] {
         'Conexión de tu nombre de dominio (.com) y publicación en internet lista'
       ],
       excludes: [
-        'No incluye panel para crear usuarios ni base de datos compleja',
-        'No incluye tienda online con carrito de compras múltiple'
+        'Esta opción no incluye panel para crear usuarios ni base de datos compleja',
+        'Esta opción no incluye tienda online con carrito de compras múltiple'
       ],
       ctaText: 'Cotizar Página Web',
       whatsappPrefill: 'Hola Tether Digital, me interesa cotizar una Página Web de Presentación y Ventas (Landing Page).'
@@ -290,7 +290,7 @@ export function getServices(lang: Language): Service[] {
         'Servidores de alta velocidad configurados y listos en la nube'
       ],
       excludes: [
-        'No incluye pasarelas de pago bancarias internacionales complejas sin cotización previa'
+        'Esta opción no incluye pasarelas de pago bancarias internacionales complejas sin cotización previa'
       ],
       ctaText: 'Cotizar Plataforma Web',
       whatsappPrefill: 'Hola Tether Digital, quiero cotizar el desarrollo de una Plataforma Web con Panel de Control.'
@@ -315,7 +315,7 @@ export function getServices(lang: Language): Service[] {
         'Soporte técnico prioritario post-entrega'
       ],
       excludes: [
-        'Costos de licencias de software externo o servidores dedicados que el cliente elija contratar'
+        'Esta opción no incluye costos de licencias de software externo o servidores dedicados que el cliente elija contratar'
       ],
       ctaText: 'Consultar Software a Medida',
       whatsappPrefill: 'Hola Tether Digital, requiero una propuesta para un Software a Medida de Gestión Empresarial.'
@@ -341,8 +341,8 @@ export function getServices(lang: Language): Service[] {
         'Supervisión y calibración técnica durante los primeros días de pauta'
       ],
       excludes: [
-        'IMPORTANTE: NO incluye diseñar imágenes, banners ni piezas gráficas (el cliente entrega el material listo)',
-        'IMPORTANTE: NO incluye grabar ni editar videos (el cliente entrega los videos listos para subir)',
+        'IMPORTANTE: Esta opción NO incluye diseñar imágenes, banners ni piezas gráficas (el cliente entrega el material listo)',
+        'IMPORTANTE: Esta opción NO incluye grabar ni editar videos (el cliente entrega los videos listos para subir)',
         'El presupuesto de publicidad que cobra Facebook/Instagram es aparte y lo pagas directamente a Meta'
       ],
       ctaText: 'Cotizar Campañas en Redes',
@@ -369,7 +369,7 @@ export function getServices(lang: Language): Service[] {
         'Guardado automático de los números de contacto en una hoja de Google Sheets'
       ],
       excludes: [
-        'Tarifas por conversación facturadas por la empresa proveedora de la API de WhatsApp'
+        'Esta opción no incluye las tarifas por conversación que cobra la empresa proveedora de la API de WhatsApp'
       ],
       ctaText: 'Automatizar WhatsApp',
       whatsappPrefill: 'Hola Tether Digital, quiero implementar el Bot de Respuestas Automáticas para WhatsApp.'
@@ -394,7 +394,7 @@ export function getServices(lang: Language): Service[] {
         'Registro automático en una hoja de cálculo para seguimiento comercial'
       ],
       excludes: [
-        'Respuestas a menciones complejas en historias fuera de lo permitido por Meta'
+        'Esta opción no incluye respuestas a menciones complejas en historias fuera de lo permitido por Meta'
       ],
       ctaText: 'Automatizar Mensajes (DM)',
       whatsappPrefill: 'Hola Tether Digital, deseo automatizar las respuestas a mensajes privados de Instagram y Facebook.'
@@ -419,7 +419,7 @@ export function getServices(lang: Language): Service[] {
         'Funciona tanto en Facebook como en Instagram'
       ],
       excludes: [
-        'No resuelve quejas o reclamos específicos que requieran atención manual'
+        'Esta opción no resuelve quejas o reclamos específicos que requieran atención manual'
       ],
       ctaText: 'Automatizar Comentarios',
       whatsappPrefill: 'Hola Tether Digital, me interesa la Respuesta Automática a Comentarios en Posts y Reels.'
