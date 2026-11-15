@@ -146,13 +146,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           </div>
         </div>
 
-        {/* What includes */}
-        <div className="space-y-2.5 pt-2">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            {tCard.whatsIncluded}
-          </h4>
-          <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-secondary)]">
+        {/* Included items */}
+        {service.includes.length > 0 && (
+          <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-secondary)] pt-2">
             {service.includes.map((item, index) => (
               <li key={index} className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
@@ -160,7 +156,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
               </li>
             ))}
           </ul>
-        </div>
+        )}
 
         {/* Exclusions / Requirements (Highlighted in vivid red — theme-safe) */}
         {service.excludes && service.excludes.length > 0 && (

@@ -36,7 +36,6 @@ export interface TranslationDictionary {
     recommendedBadge: string
     estimatedInvestment: string
     deliveryTime: string
-    whatsIncluded: string
     conditionsAndExclusions: string
     categoryWeb: string
     categoryAds: string
