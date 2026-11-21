@@ -1,6 +1,13 @@
 import type { CurrencyCode } from './currency'
 
-export type ServiceCategory = 'all' | 'web-development' | 'meta-ads' | 'automation-chatbots'
+export type ServiceCategory =
+  | 'all'
+  | 'web-development'
+  | 'redesign-migration'
+  | 'optimization'
+  | 'meta-ads'
+  | 'google-tiktok-ads'
+  | 'automation-chatbots'
 
 export type ServiceTier = 'Básico' | 'Profesional' | 'Avanzado' | 'Especializado' | 'Basic' | 'Professional' | 'Advanced' | 'Specialized'
 
@@ -24,7 +31,6 @@ export interface Service {
   pricePerUnit?: string
   deliveryTime: string
   includes: string[]
-  excludes?: string[]
   ctaText: string
   whatsappPrefill: string
 }
@@ -32,6 +38,6 @@ export interface Service {
 export interface CategoryOption {
   id: ServiceCategory
   label: string
-  iconName: 'Globe' | 'Megaphone' | 'Bot' | 'Layers'
+  iconName: 'Globe' | 'RefreshCw' | 'Gauge' | 'Megaphone' | 'Target' | 'Bot' | 'Layers'
   description?: string
 }

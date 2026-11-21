@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileOpen((open) => !open)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={mobileOpen ? t.nav.closeMenu : t.nav.openMenu}
             className="p-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-card)] text-[var(--text-primary)] hover:border-[var(--accent-primary)] transition-colors cursor-pointer select-none"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -121,7 +121,8 @@ export const Header: React.FC<HeaderProps> = ({
           {mobileOpen && (
             <div
               id="mobile-menu"
-              aria-label="Menú de opciones"
+              role="navigation"
+              aria-label={t.nav.menuOptions}
               className="absolute left-4 right-4 top-full mt-2 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] shadow-2xl backdrop-blur-xl p-4 z-50 space-y-3 animate-in fade-in zoom-in-95 duration-150"
             >
               <div className="flex flex-col items-start gap-2">

@@ -5,7 +5,9 @@ import { ServiceFilters } from './components/services/ServiceFilters'
 import { ServiceGrid } from './components/services/ServiceGrid'
 import { FreeAdvisoryBanner } from './components/services/FreeAdvisoryBanner'
 import { HowItWorks } from './components/sections/HowItWorks'
+import { PaymentGuarantee } from './components/sections/PaymentGuarantee'
 import { WhatsAppFloat } from './components/common/WhatsAppFloat'
+import { BackgroundLayer } from './components/common/BackgroundLayer'
 import { getCategories, getServices } from './data/services'
 import { detectInitialCurrency } from './data/currency'
 import { buildWhatsAppUrl } from './data/contact'
@@ -16,7 +18,7 @@ import type { Service, ServiceCategory } from './types/service'
 import type { ThemeMode } from './types/theme'
 import type { Language } from './types/i18n'
 import type { CurrencyCode } from './types/currency'
-import { Code2, Bot, Megaphone, HeartHandshake, CreditCard } from 'lucide-react'
+import { Code2, Bot, Megaphone, CreditCard } from 'lucide-react'
 
 export function App() {
   // Theme state: defaults to Cyan
@@ -30,7 +32,7 @@ export function App() {
     return detectInitialLanguage()
   })
 
-  // Currency state: defaults to Bolivianos (BOB) for Bolivia, or detected currency
+  // Currency state: defaults to Bolivianos (BOB), or the visitor's saved choice
   const [currency, setCurrency] = useState<CurrencyCode>(() => {
     return detectInitialCurrency()
   })
@@ -126,8 +128,13 @@ export function App() {
   return (
     <div
       data-theme={theme}
-      className="min-h-screen flex flex-col bg-[var(--bg-page)] text-[var(--text-primary)]"
+      className="relative min-h-screen flex flex-col text-[var(--text-primary)]"
     >
+      <a href="#main-content" className="skip-link">
+        {t.nav.skipToContent}
+      </a>
+      <BackgroundLayer />
+
       {/* Top sticky navigation with Currency, Themes, Languages & Actions */}
       <Header
         currentTheme={theme}
@@ -140,15 +147,10 @@ export function App() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 sm:space-y-16">
+      <main id="main-content" className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 sm:space-y-16">
         
         {/* Hero Section */}
         <section className="text-center space-y-6 max-w-3xl mx-auto pt-4 sm:pt-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[var(--accent-badge-bg)] text-[var(--accent-badge-text)] border border-[var(--accent-badge-border)] shadow-sm">
-            <HeartHandshake className="w-3.5 h-3.5 text-[var(--accent-primary)] animate-pulse" />
-            <span>{t.hero.badge}</span>
-          </div>
-
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] bg-gradient-to-r from-[var(--accent-gradient-from)] to-[var(--accent-gradient-to)] bg-clip-text text-transparent">
             {t.hero.titleLead} {t.hero.titleAccent}
           </h1>
@@ -204,8 +206,11 @@ export function App() {
         {/* How it works */}
         <HowItWorks t={t.howItWorks} />
 
+        {/* Payment methods & guarantee */}
+        <PaymentGuarantee t={t.trust} />
+
         {/* Custom Project Callout */}
-        <section className="relative overflow-hidden rounded-3xl bg-[var(--bg-card)] border border-[var(--border-accent)] p-8 sm:p-12 text-center space-y-6 shadow-2xl">
+        <section className="content-deferred relative overflow-hidden rounded-3xl bg-[var(--bg-card)] border border-[var(--border-accent)] p-8 sm:p-12 text-center space-y-6 shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-3">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight">
               {t.customProject.title}

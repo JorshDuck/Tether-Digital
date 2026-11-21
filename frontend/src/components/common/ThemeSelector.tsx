@@ -10,6 +10,7 @@ interface ThemeSelectorProps {
     ember: string
     cyan: string
     light: string
+    themeLabel: string
   }
 }
 
@@ -49,7 +50,9 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
             key={t.id}
             type="button"
             onClick={() => onThemeChange(t.id)}
-            title={`Tema ${t.label}`}
+            title={`${labels.themeLabel} ${t.label}`}
+            aria-label={`${labels.themeLabel} ${t.label}`}
+            aria-pressed={isActive}
             className={cn(
               'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer select-none',
               isActive

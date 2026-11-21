@@ -10,14 +10,18 @@ export interface TranslationDictionary {
     freeAdvisoryBtn: string
     whatsappFloatLabel: string
     whatsappFloatMessage: string
+    openMenu: string
+    closeMenu: string
+    menuOptions: string
+    skipToContent: string
   }
   themes: {
     ember: string
     cyan: string
     light: string
+    themeLabel: string
   }
   hero: {
-    badge: string
     titleLead: string
     titleAccent: string
     description: string
@@ -36,9 +40,13 @@ export interface TranslationDictionary {
     recommendedBadge: string
     estimatedInvestment: string
     deliveryTime: string
-    conditionsAndExclusions: string
+    readMore: string
+    readLess: string
     categoryWeb: string
+    categoryRedesign: string
+    categoryOptimization: string
     categoryAds: string
+    categoryGoogleAds: string
     categoryAuto: string
   }
   freeAdvisory: {
@@ -70,6 +78,20 @@ export interface TranslationDictionary {
     step4Title: string
     step4Desc: string
   }
+  trust: {
+    paymentsTitle: string
+    paymentsDesc: string
+    payment1: string
+    payment2: string
+    payment3: string
+    payment4: string
+    guaranteeTitle: string
+    guaranteeDesc: string
+    guarantee1: string
+    guarantee2: string
+    guarantee3: string
+    guarantee4: string
+  }
   footer: {
     pillar1Title: string
     pillar1Desc: string
@@ -77,6 +99,9 @@ export interface TranslationDictionary {
     pillar2Desc: string
     pillar3Title: string
     pillar3Desc: string
+    followTitle: string
+    visit: string
+    whatsappMessage: string
     disclaimer: string
     rights: string
   }

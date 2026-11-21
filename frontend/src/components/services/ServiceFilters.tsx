@@ -1,5 +1,5 @@
 import React from 'react'
-import { Globe, Megaphone, Bot, Layers } from 'lucide-react'
+import { Globe, RefreshCw, Gauge, Megaphone, Target, Bot, Layers } from 'lucide-react'
 import type { CategoryOption, ServiceCategory } from '../../types/service'
 import { cn } from '../../lib/utils'
 
@@ -18,8 +18,14 @@ export const ServiceFilters: React.FC<ServiceFiltersProps> = ({
     switch (iconName) {
       case 'Globe':
         return <Globe className="w-4 h-4" />
+      case 'RefreshCw':
+        return <RefreshCw className="w-4 h-4" />
+      case 'Gauge':
+        return <Gauge className="w-4 h-4" />
       case 'Megaphone':
         return <Megaphone className="w-4 h-4" />
+      case 'Target':
+        return <Target className="w-4 h-4" />
       case 'Bot':
         return <Bot className="w-4 h-4" />
       case 'Layers':

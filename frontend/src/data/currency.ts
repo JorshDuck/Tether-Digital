@@ -109,8 +109,8 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
 }
 
 /**
- * Detección automática de país / moneda mediante la zona horaria
- * o configuración regional del navegador del visitante.
+ * Moneda inicial del catálogo: siempre Bolivianos (BOB) por defecto,
+ * respetando únicamente la elección manual guardada por el visitante.
  */
 export function detectInitialCurrency(): CurrencyCode {
   if (typeof window === 'undefined') return 'BOB'
@@ -118,56 +118,10 @@ export function detectInitialCurrency(): CurrencyCode {
   try {
     const saved = localStorage.getItem('tether_currency') as CurrencyCode
     if (saved && CURRENCIES[saved]) return saved
-
-    const timeZone = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase()
-    const navLang = (navigator.language || '').toLowerCase()
-
-    // 1. Chile
-    if (timeZone.includes('santiago') || navLang.includes('cl')) return 'CLP'
-
-    // 2. Colombia
-    if (timeZone.includes('bogota') || navLang.includes('co')) return 'COP'
-
-    // 3. Perú
-    if (timeZone.includes('lima') || navLang.includes('pe')) return 'PEN'
-
-    // 4. México
-    if (
-      timeZone.includes('mexico') ||
-      timeZone.includes('monterrey') ||
-      timeZone.includes('tijuana') ||
-      timeZone.includes('cancun') ||
-      navLang.includes('mx')
-    ) {
-      return 'MXN'
-    }
-
-    // 5. Argentina
-    if (timeZone.includes('argentina') || timeZone.includes('buenos_aires') || navLang.includes('ar')) return 'ARS'
-
-    // 6. Uruguay
-    if (timeZone.includes('uruguay') || timeZone.includes('montevideo') || navLang.includes('uy')) return 'UYU'
-
-    // 7. Europa (zonas horarias Europe/*)
-    if (
-      timeZone.startsWith('europe/') ||
-      navLang.startsWith('de') ||
-      navLang.startsWith('fr') ||
-      navLang.startsWith('es-es') ||
-      navLang.startsWith('it') ||
-      navLang.startsWith('pt-pt') ||
-      navLang.startsWith('nl')
-    ) {
-      return 'EUR'
-    }
-
-    // 8. Bolivia (por defecto si está en La Paz o es-BO)
-    if (timeZone.includes('la_paz') || navLang.includes('bo')) return 'BOB'
   } catch {
     // fallback seguro
   }
 
-  // Por defecto en Bolivia
   return 'BOB'
 }
 

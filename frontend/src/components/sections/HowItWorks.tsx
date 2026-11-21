@@ -15,7 +15,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ t }) => {
   ]
 
   return (
-    <section className="space-y-8">
+    <section className="content-deferred space-y-8">
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[var(--accent-badge-bg)] text-[var(--accent-badge-text)] border border-[var(--accent-badge-border)]">
           {t.badge}

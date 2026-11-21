@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CheckCircle2,
-  XCircle,
   Clock,
   Sparkles,
   ArrowRight,
   DollarSign,
-  AlertTriangle
+  ChevronDown
 } from 'lucide-react'
 import type { Service } from '../../types/service'
 import type { TranslationDictionary, Language } from '../../types/i18n'
@@ -33,8 +32,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   const getCategoryBadge = (category: Service['category']) => {
     switch (category) {
       case 'web-development':
+      case 'redesign-migration':
         return 'text-[var(--cat-web-text)] bg-[var(--cat-web-bg)] border-[var(--cat-web-border)]'
+      case 'optimization':
+        return 'text-[var(--cat-auto-text)] bg-[var(--cat-auto-bg)] border-[var(--cat-auto-border)]'
       case 'meta-ads':
+      case 'google-tiktok-ads':
         return 'text-[var(--cat-ads-text)] bg-[var(--cat-ads-bg)] border-[var(--cat-ads-border)]'
       case 'automation-chatbots':
         return 'text-[var(--cat-auto-text)] bg-[var(--cat-auto-bg)] border-[var(--cat-auto-border)]'
@@ -47,14 +50,22 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     switch (category) {
       case 'web-development':
         return tCard.categoryWeb
+      case 'redesign-migration':
+        return tCard.categoryRedesign
+      case 'optimization':
+        return tCard.categoryOptimization
       case 'meta-ads':
         return tCard.categoryAds
+      case 'google-tiktok-ads':
+        return tCard.categoryGoogleAds
       case 'automation-chatbots':
         return tCard.categoryAuto
     }
   }
 
   const price = resolveServicePrice(service, currentCurrency, currentLang)
+  const [expanded, setExpanded] = useState(false)
+  const descriptionId = `service-desc-${service.id}`
 
   return (
     <div
@@ -107,6 +118,28 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           <p className="text-sm text-[var(--text-muted)] mt-2 leading-relaxed">
             {service.summary}
           </p>
+
+          <button
+            type="button"
+            onClick={() => setExpanded((value) => !value)}
+            aria-expanded={expanded}
+            aria-controls={descriptionId}
+            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-[var(--accent-primary)] hover:opacity-80 transition-opacity cursor-pointer"
+          >
+            {expanded ? tCard.readLess : tCard.readMore}
+            <ChevronDown
+              className={cn('w-3.5 h-3.5 transition-transform duration-200', expanded && 'rotate-180')}
+            />
+          </button>
+
+          {expanded && (
+            <p
+              id={descriptionId}
+              className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed animate-in fade-in duration-200"
+            >
+              {service.description}
+            </p>
+          )}
         </div>
 
         {/* Price & Delivery details box */}
@@ -156,26 +189,6 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
               </li>
             ))}
           </ul>
-        )}
-
-        {/* Exclusions / Requirements (Highlighted in vivid red — theme-safe) */}
-        {service.excludes && service.excludes.length > 0 && (
-          <div className="space-y-2 pt-2 pb-1">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-red-500 flex items-center gap-1.5">
-              <AlertTriangle className="w-3.5 h-3.5 text-red-500 shrink-0" />
-              <span>{tCard.conditionsAndExclusions}</span>
-            </h4>
-            <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-3 space-y-2">
-              <ul className="space-y-1.5 text-xs text-red-400 font-medium">
-                {service.excludes.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <XCircle className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
-                    <span className="leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         )}
       </div>
 
