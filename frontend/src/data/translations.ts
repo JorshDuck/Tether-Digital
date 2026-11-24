@@ -23,9 +23,9 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       themeLabel: 'Tema',
     },
     hero: {
-      titleLead: 'Catálogo de Servicios &',
-      titleAccent: 'Precios',
-      description: 'Te ayudamos a vender más y atender mejor a tus clientes con páginas web modernas, publicidad efectiva en redes y respuestas automáticas 24/7.',
+      titleLead: 'Tether',
+      titleAccent: 'Digital',
+      description: 'Diseñamos páginas web, campañas y automatizaciones pensadas para que tu negocio se vea mejor, atienda más rápido y convierta más clientes.',
       chipWeb: 'Páginas Web & Plataformas',
       chipAds: 'Publicidad en Facebook e Instagram',
       chipAuto: 'Bots de WhatsApp & Redes',
@@ -35,6 +35,21 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       noServicesTitle: 'No se encontraron servicios',
       noServicesDesc: 'Prueba seleccionando otra categoría para explorar nuestras soluciones disponibles.',
       installments: 'Puedes pagar en cuotas',
+    },
+    catalogPage: {
+      titleLead: 'Catálogo de servicios &',
+      titleAccent: 'precios',
+      description: 'Explora soluciones, inversiones estimadas y tiempos de entrega. Elige la categoría que mejor se adapte a tu negocio y cotiza por WhatsApp.',
+      backHome: 'Volver al inicio',
+    },
+    homeCatalogCta: {
+      title: '¿Quieres ver servicios e inversiones?',
+      description: 'Dejamos el catálogo completo en una página aparte para que lo explores con calma y elijas la opción que encaja con tu negocio.',
+      cta: 'Ver catálogo y precios',
+    },
+    featured: {
+      title: 'Servicios destacados',
+      cta: 'Ver todos los servicios',
     },
     card: {
       levelPrefix: 'Nivel',
@@ -67,9 +82,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       cta: 'Solicitar Asesoría Personalizada',
     },
     howItWorks: {
-      badge: 'Proceso Simple y Claro',
       title: 'Así trabajamos',
-      subtitle: 'Un proceso claro de principio a fin, para que sepas exactamente qué esperar en cada etapa.',
       step1Title: 'Asesoría gratuita',
       step1Desc: 'Nos cuentas qué necesitas por WhatsApp, sin costo ni compromiso.',
       step2Title: 'Propuesta clara',
@@ -129,9 +142,9 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       themeLabel: 'Theme',
     },
     hero: {
-      titleLead: 'Services Catalog &',
-      titleAccent: 'Pricing',
-      description: 'We help you sell more and serve customers better with modern websites, targeted social media ads, and 24/7 automated messaging.',
+      titleLead: 'Tether',
+      titleAccent: 'Digital',
+      description: 'Websites, campaigns, and automations designed to help your business look better, respond faster, and convert more customers.',
       chipWeb: 'Websites & Platforms',
       chipAds: 'Facebook & Instagram Ads',
       chipAuto: 'WhatsApp & Social Bots',
@@ -141,6 +154,21 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       noServicesTitle: 'No services found',
       noServicesDesc: 'Try choosing another category to explore our available solutions.',
       installments: 'You can pay in installments',
+    },
+    catalogPage: {
+      titleLead: 'Services catalog &',
+      titleAccent: 'pricing',
+      description: 'Explore solutions, estimated investments, and delivery times. Pick the category that fits your business and request a quote on WhatsApp.',
+      backHome: 'Back to home',
+    },
+    homeCatalogCta: {
+      title: 'Want to see services and pricing?',
+      description: 'We keep the full catalog on a separate page so you can explore it at your own pace and choose the option that fits your business.',
+      cta: 'View catalog & pricing',
+    },
+    featured: {
+      title: 'Featured services',
+      cta: 'See all services',
     },
     card: {
       levelPrefix: 'Tier',
@@ -173,9 +201,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       cta: 'Request Custom Proposal',
     },
     howItWorks: {
-      badge: 'Simple, Clear Process',
       title: 'How we work',
-      subtitle: 'A clear process from start to finish so you always know what to expect at every step.',
       step1Title: 'Free consultation',
       step1Desc: 'Tell us what you need on WhatsApp, with no cost and no obligation.',
       step2Title: 'Clear proposal',

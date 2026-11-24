@@ -12,7 +12,7 @@ export const FreeAdvisoryBanner: React.FC<FreeAdvisoryBannerProps> = ({ tAdvisor
   const whatsappUrl = buildWhatsAppUrl(tAdvisory.whatsappPrefill)
 
   return (
-    <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-card)] to-[var(--accent-badge-bg)] border border-[var(--border-accent)] p-6 sm:p-10 shadow-2xl transition-all duration-300">
+    <section data-reveal className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-card)] to-[var(--accent-badge-bg)] border border-[var(--border-accent)] p-6 sm:p-10 shadow-2xl transition-all duration-300">
       {/* Decorative background glow */}
       <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--accent-glow)] blur-3xl pointer-events-none" />
 

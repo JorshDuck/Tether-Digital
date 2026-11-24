@@ -35,6 +35,21 @@ export interface TranslationDictionary {
     noServicesDesc: string
     installments: string
   }
+  catalogPage: {
+    titleLead: string
+    titleAccent: string
+    description: string
+    backHome: string
+  }
+  homeCatalogCta: {
+    title: string
+    description: string
+    cta: string
+  }
+  featured: {
+    title: string
+    cta: string
+  }
   card: {
     levelPrefix: string
     recommendedBadge: string
@@ -66,9 +81,7 @@ export interface TranslationDictionary {
     cta: string
   }
   howItWorks: {
-    badge: string
     title: string
-    subtitle: string
     step1Title: string
     step1Desc: string
     step2Title: string

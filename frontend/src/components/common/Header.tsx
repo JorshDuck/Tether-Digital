@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Sparkles, HeartHandshake, Menu, X } from 'lucide-react'
+import { Sparkles, HeartHandshake, Menu, X, LayoutGrid } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { TetherLogo } from './TetherLogo'
 import { ThemeSelector } from './ThemeSelector'
 import { LanguageSelector } from './LanguageSelector'
 import type { ThemeMode } from '../../types/theme'
 import type { Language, TranslationDictionary } from '../../types/i18n'
+import { trackEvent } from '../../utils/analytics'
 
 interface HeaderProps {
+  homeHref: string
   currentTheme: ThemeMode
   onThemeChange: (theme: ThemeMode) => void
   currentLang: Language
@@ -18,6 +20,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
+  homeHref,
   currentTheme,
   onThemeChange,
   currentLang,
@@ -52,13 +55,25 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[var(--border-card)] bg-[var(--header-bg)] backdrop-blur-xl">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4">
-        {/* Brand identity: Animated Io Wisp Inspired Logo */}
-        <div className="flex items-center gap-3">
+        <a
+          href={homeHref}
+          aria-label="Tether Digital — Inicio"
+          onClick={() => trackEvent('home_logo_click')}
+          className="flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
+        >
           <TetherLogo size={50} showText={true} />
-        </div>
+        </a>
 
         {/* Desktop Controls */}
         <div className="hidden md:flex items-center gap-1.5 sm:gap-2.5">
+          <a
+            href="catalogo/"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-inner)] transition-colors"
+          >
+            <LayoutGrid className="w-3.5 h-3.5" />
+            <span>{t.nav.catalogYear}</span>
+          </a>
+
           {/* Theme Selector (Ember / Cyan / Claro) */}
           <ThemeSelector
             currentTheme={currentTheme}
@@ -138,6 +153,15 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
 
               <div className="flex flex-col gap-2 pt-1">
+                <a
+                  href="catalogo/"
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  <LayoutGrid className="w-3.5 h-3.5" />
+                  <span>{t.nav.catalogYear}</span>
+                </a>
+
                 <Button
                   variant="outline"
                   size="md"

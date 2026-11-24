@@ -11,7 +11,7 @@ export const PaymentGuarantee: React.FC<PaymentGuaranteeProps> = ({ t }) => {
   const guarantees = [t.guarantee1, t.guarantee2, t.guarantee3, t.guarantee4]
 
   return (
-    <section className="content-deferred grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section data-reveal className="content-deferred grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Payment methods */}
       <div className="rounded-3xl bg-[var(--bg-card)] border border-[var(--border-card)] p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3 mb-4">

@@ -15,17 +15,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ t }) => {
   ]
 
   return (
-    <section className="content-deferred space-y-8">
-      <div className="text-center max-w-2xl mx-auto space-y-3">
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[var(--accent-badge-bg)] text-[var(--accent-badge-text)] border border-[var(--accent-badge-border)]">
-          {t.badge}
-        </span>
+    <section data-reveal className="content-deferred space-y-8">
+      <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
           {t.title}
         </h2>
-        <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
-          {t.subtitle}
-        </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -34,6 +28,8 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ t }) => {
           return (
             <div
               key={step.title}
+              data-reveal
+              style={{ transitionDelay: `${index * 80}ms` }}
               className="relative rounded-3xl bg-[var(--bg-card)] border border-[var(--border-card)] p-6 shadow-sm hover:border-[var(--border-accent)] transition-colors"
             >
               <span className="absolute top-5 right-5 text-3xl font-black text-[var(--text-muted)] opacity-20 select-none">
